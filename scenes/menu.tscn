@@ -36,13 +36,13 @@ corner_detail = 9
 position = Vector2(983, 610)
 script = ExtResource("1_con2f")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-23, -40)
+[node name="background" type="Parallax2D" parent="."]
+scroll_offset = Vector2(366.5, 114)
 repeat_size = Vector2(64, 64)
 autoscroll = Vector2(1, 100)
 repeat_times = 30
 
-[node name="Blue" type="Sprite2D" parent="Parallax2D"]
+[node name="Blue" type="Sprite2D" parent="background"]
 texture = ExtResource("1_vjb58")
 
 [node name="Label" type="Label" parent="."]
@@ -59,6 +59,7 @@ theme_override_constants/outline_size = 26
 theme_override_fonts/font = ExtResource("2_vjb58")
 theme_override_font_sizes/font_size = 140
 text = "roll a plooza"
+autowrap_trim_flags = 128
 
 [node name="quit" type="Button" parent="."]
 offset_left = -186.0
@@ -91,3 +92,4 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
 text = "PLAY"
 
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
