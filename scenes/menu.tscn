@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://4jmulp1oj0"]
+
+[ext_resource type="Script" uid="uid://3lcik8wnxhb0" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://bokh2kug2521h" path="res://assets/Free/Background/Blue.png" id="1_vjb58"]
+[ext_resource type="FontFile" uid="uid://tmhcfemv32go" path="res://assets/font/VT323-Regular.ttf" id="2_vjb58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.7834153, 0, 0.2739572, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.40641972, 0.40641975, 0.4064196, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+bg_color = Color(0, 0.68855935, 0.67289376, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 9
+
+[node name="Menu" type="Node2D"]
+position = Vector2(983, 610)
+script = ExtResource("1_con2f")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-23, -40)
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(1, 100)
+repeat_times = 30
+
+[node name="Blue" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_vjb58")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -372.0
+offset_top = -550.0
+offset_right = 699.0
+offset_bottom = -344.0
+theme_override_colors/font_color = Color(0.24313726, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 26
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 140
+text = "roll a plooza"
+
+[node name="quit" type="Button" parent="."]
+offset_left = -186.0
+offset_top = 79.0
+offset_right = 140.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(1, 0.74166644, 0.83867586, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ytvr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+text = "QUIT"
+
+[node name="play" type="Button" parent="."]
+offset_left = -189.0
+offset_top = -88.0
+offset_right = 137.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.44732666, 1, 0.71963274, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 27
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ytvr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+text = "PLAY"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
